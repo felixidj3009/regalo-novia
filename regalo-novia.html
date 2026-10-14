@@ -1,0 +1,717 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f5">
+
+  <title>Para el amor de mi vida ❤️</title>
+
+  
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+  <style>
+     /* Carrusel romántico de recuerdos */
+    .carrusel-romantico {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(116, 27, 59, .18);
+      background: #741b3b;
+    }
+
+    .carrusel-romantico .carousel-item img {
+      width: 100%;
+      height: 520px;
+      object-fit: contain;
+      background: #741b3b;
+    }
+
+    .carrusel-romantico .carousel-caption {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 45px 15px 35px;
+      background: linear-gradient(transparent, rgba(55, 10, 29, .85));
+    }
+
+    .carrusel-romantico .carousel-caption h5 {
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      font-weight: bold;
+    }
+
+    .carrusel-romantico .carousel-caption p { margin-bottom: 0; }
+    #carruselAmor .carousel-indicators { margin-bottom: 12px; }
+
+    @media (max-width: 576px) {
+      .carrusel-romantico .carousel-item img { height: 350px; }
+      .carrusel-romantico .carousel-caption { padding: 35px 10px 30px; }
+    }
+
+    :root {
+      --rosa: #b52e59;
+      --rosa-oscuro: #741b3b;
+      --rosa-claro: #fff0f5;
+      --crema: #fffaf7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--rosa-claro);
+      color: #542238;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background: rgba(255, 250, 247, .96);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: var(--rosa-oscuro);
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      color: var(--rosa);
+    }
+
+    .portada {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff 0, transparent 30%),
+        linear-gradient(135deg, #ffdce7, #fff8fa, #f7c0d3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portada h1 {
+      color: var(--rosa-oscuro);
+      font-size: clamp(2.7rem, 7vw, 5.4rem);
+      font-weight: bold;
+    }
+
+    .corazon-grande {
+      font-size: 4.5rem;
+      animation: latido 1.5s infinite;
+    }
+
+    .texto-suave {
+      color: #805064;
+      line-height: 1.9;
+    }
+
+    .boton-rosa {
+      background: var(--rosa);
+      border-color: var(--rosa);
+      color: white;
+      border-radius: 50px;
+      padding: 12px 25px;
+    }
+
+    .boton-rosa:hover {
+      background: var(--rosa-oscuro);
+      border-color: var(--rosa-oscuro);
+      color: white;
+    }
+
+    .seccion {
+      padding: 85px 0;
+    }
+
+    .titulo-seccion {
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+    }
+
+    .tarjeta-foto {
+      background: white;
+      border: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 10px 30px rgba(116, 27, 59, .09);
+      transition: transform .25s;
+    }
+
+    .tarjeta-foto:hover {
+      transform: translateY(-6px);
+    }
+
+    .foto-recuerdo {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .icono-corazon {
+      color: var(--rosa);
+    }
+
+    .fondo-carta {
+      background: linear-gradient(140deg, #f9dce6, #fff6f8);
+    }
+
+    .carta {
+      background: var(--crema);
+      border: 1px solid #f1cfdb;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(116, 27, 59, .08);
+      line-height: 2;
+    }
+
+    .reproductor {
+      background: white;
+      border: 1px solid #f1cfdb;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(116, 27, 59, .08);
+    }
+
+    .corazon-flotante {
+      position: fixed;
+      bottom: -40px;
+      z-index: 20;
+      pointer-events: none;
+      animation: flotar 6s linear forwards;
+    }
+
+    footer {
+      background: var(--rosa-oscuro);
+      color: white;
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.13); }
+    }
+
+    @keyframes flotar {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: .9;
+      }
+      to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .seccion {
+        padding: 60px 0;
+      }
+
+      .foto-recuerdo {
+        height: 280px;
+      }
+
+      .portada {
+        min-height: 85vh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">
+        Para mi amor Natyy ❤️
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#menuAmor"
+        aria-controls="menuAmor"
+        aria-expanded="false"
+        aria-label="Abrir menú">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuAmor">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#recuerdos">Nuestros recuerdos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#carta">Mi carta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cancion">Nuestra canción</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <header class="portada text-center" id="inicio">
+    <div class="container py-5">
+
+      <div class="corazon-grande mb-3">❤️</div>
+
+      
+      <p class="text-uppercase fw-semibold small"
+         style="letter-spacing: 4px;">
+        Una sorpresa hecha con amor
+      </p>
+
+      <h1 class="mb-4">Para mi niña hermosa Natyy</h1>
+
+      <p class="lead texto-suave mx-auto mb-4"
+         style="max-width: 650px;">
+        Entre tantas personas en este mundo,
+        qué bonito haber coincidido contigo.
+        Eres mi casualidad favorita y una de mis
+        razones más bonitas para sonreír.
+      </p>
+
+      <a href="#recuerdos" class="btn boton-rosa btn-lg">
+        Descubre nuestra historia 💌
+      </a>
+
+      <div class="mt-4">
+        <button class="btn btn-outline-danger rounded-pill px-4"
+                id="botonMusicaPortada">
+          ♫ Reproducir nuestra canción
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="seccion" id="recuerdos">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <p class="text-uppercase small fw-semibold"
+           style="letter-spacing: 3px;">
+          Momentos que guardo en mi corazón
+        </p>
+
+        <h2 class="titulo-seccion display-5">
+          Nuestros recuerdos 📸
+        </h2>
+
+        <p class="texto-suave mt-3">
+          Cada foto cuenta un pedacito de nuestra historia.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+       
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card tarjeta-foto">
+            <img
+              src="c:\Users\frane\Downloads\WhatsApp-Image-2026-10-13-at-8.58.44-PM-_4_.jpg"
+              class="foto-recuerdo"
+              alt="Un recuerdo de nosotros"
+              loading="lazy">
+
+            <div class="card-body text-center p-4">
+              <h3 class="h5">Mi lugar favorito ❤️</h3>
+              <p class="texto-suave mb-0">
+                Donde sea, siempre que esté contigo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card tarjeta-foto">
+            <img
+              src="c:\Users\frane\Downloads\WhatsApp-Image-2026-10-13-at-8.58.44-PM-_2_.jpg"
+              class="foto-recuerdo"
+              alt="Otro recuerdo de nuestra historia"
+              loading="lazy">
+
+            <div class="card-body text-center p-4">
+              <h3 class="h5">Tu sonrisa me encanta 🥹</h3>
+              <p class="texto-suave mb-0">
+                Uno de mis detalles favoritos de ti.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card tarjeta-foto">
+            <img
+              src="img/WhatsApp-Image-2026-10-13-at-8.58.45-PM-_2_.jpg"
+              class="foto-recuerdo"
+              alt="Un momento especial juntos"
+              loading="lazy">
+
+            <div class="card-body text-center p-4">
+              <h3 class="h5">Nuestra historia 💗</h3>
+              <p class="texto-suave mb-0">
+                Y todavía nos faltan tantos recuerdos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="texto-suave fst-italic">
+          "No quiero solamente recuerdos bonitos contigo;
+          quiero seguir construyéndolos."
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="seccion fondo-carta" id="carta">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <div class="display-3 mb-3">💌</div>
+
+        <h2 class="titulo-seccion display-5">
+          Una carta para ti
+        </h2>
+
+        <p class="texto-suave">
+          Hay cosas que quiero recordarte todos los días.
+        </p>
+      </div>
+
+      <div class="text-center">
+        <button
+          class="btn boton-rosa btn-lg"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#miCarta"
+          aria-expanded="false"
+          aria-controls="miCarta">
+          Abrir mi corazón 💖
+        </button>
+      </div>
+
+      <div class="collapse mt-4" id="miCarta">
+        <article class="carta p-4 p-md-5 mx-auto"
+                 style="max-width: 800px;">
+
+          <p>Mi niña hermosa ❤️</p>
+
+          <p>
+            Quiero que sepas que eres una de las cosas más bonitas
+            que me han pasado. Desde que llegaste a mi vida,
+            los días tienen algo especial y los momentos más
+            sencillos se convierten en recuerdos que quiero guardar.
+          </p>
+
+          <p>
+            No te prometo una vida en la que todo sea perfecto,
+            pero sí quiero esforzarme por construir algo bonito
+            contigo. Quiero escucharte, cuidarte, respetarte,
+            aprender de nuestros errores y estar para ti
+            cuando necesites un abrazo.
+          </p>
+
+          <p>
+            Cuando pienso en mi futuro, me hace feliz imaginar
+            que todavía estaremos creando recuerdos, cumpliendo
+            sueños y eligiéndonos una y otra vez.
+          </p>
+
+          <p>
+            Gracias por tu cariño, por tus sonrisas y por dejarme
+            formar parte de tu vida. Si pudiera volver al momento
+            en que te conocí, volvería a acercarme a ti.
+          </p>
+
+          <p>
+            Esta página es una pequeña forma de demostrarte
+            lo que siento. Ningún diseño ni ninguna palabra
+            pueden explicar completamente cuánto te amo.
+          </p>
+
+          <p class="text-end fw-bold mb-0">
+            Con todo mi amor, tu niño. ❤️
+          </p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="seccion" id="cancion">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <h2 class="titulo-seccion display-5">
+          Nuestra canción 🎶
+        </h2>
+
+        <p class="texto-suave">
+          Una canción que quiero compartir contigo.
+        </p>
+      </div>
+
+      <div class="reproductor mx-auto p-4 p-md-5 text-center"
+           style="max-width: 520px;">
+
+        <div class="display-1 mb-3">🎵</div>
+
+        <h3 class="h4">Para el amor de mi vida</h3>
+
+        <p class="texto-suave">
+          Cada nota me recuerda a ti. ❤️
+        </p>
+
+        
+        <audio id="audioAmor" src="Cafe_Tacvba_-_Eres_me_encanta_mi_favorita_jijijijijijji_(mp3.pm).mp3" loop preload="none">
+          Tu navegador no admite la reproducción de audio.
+        </audio>
+
+        <button class="btn boton-rosa btn-lg mt-3"
+                id="botonMusica">
+     
+          ▶ Reproducir canción
+        </button>
+
+        <p class="small texto-suave mt-3 mb-0">
+          Toca el botón para comenzar a escuchar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+   <section class="seccion" id="recuerdos">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="text-uppercase small fw-semibold" style="letter-spacing: 3px;">
+          Momentos que guardo en mi corazón
+        </p>
+        <h2 class="titulo-seccion display-5">Nuestros recuerdos 📸</h2>
+        <p class="texto-suave mt-3">Cada foto cuenta un pedacito de nuestra historia ❤️</p>
+      </div>
+
+      <div id="carruselAmor" class="carousel slide carousel-fade mx-auto" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="1" aria-label="Foto 2"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="2" aria-label="Foto 3"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="3" aria-label="Foto 4"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="4" aria-label="Foto 5"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="5" aria-label="Foto 6"></button>
+          <button type="button" data-bs-target="#carruselAmor" data-bs-slide-to="6" aria-label="Foto 7"></button>
+        </div>
+
+        <div class="carousel-inner carrusel-romantico">
+          <div class="carousel-item active">
+            <img src="img/WhatsApp-Image-2026-10-13-at-8.58.45-PM.jpg" class="d-block w-100" alt="Nuestro primer recuerdo">
+            <div class="carousel-caption"><h5>Mi lugar favorito ❤️</h5><p>Donde sea, siempre que esté contigo.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/WhatsApp-Image-2026-10-13-at-8.58.45-PM-_1_.jpg" class="d-block w-100" alt="Un recuerdo de nosotros">
+            <div class="carousel-caption"><h5>Tu sonrisa me encanta 🥹</h5><p>Una de mis razones favoritas para sonreír.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/WhatsApp-Image-2026-10-13-at-8.58.44-PM.jpg" class="d-block w-100" alt="Un momento especial juntos">
+            <div class="carousel-caption"><h5>Nuestra historia 💗</h5><p>Y todavía nos faltan tantos recuerdos.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/WhatsApp-Image-2026-10-13-at-8.58.44-PM-_3_.jpg" class="d-block w-100" alt="Otro momento juntos">
+            <div class="carousel-caption"><h5>Contigo todo es más bonito 💕</h5><p>Gracias por formar parte de mi vida.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/WhatsApp-Image-2026-10-13-at-8.58.43-PM.jpg" class="d-block w-100" alt="Un recuerdo que quiero conservar">
+            <div class="carousel-caption"><h5>Mi persona favorita 💖</h5><p>Te elegiría una y mil veces.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="WhatsApp Image 2026-10-13 at 10.13.02 PM (1).jpg" class="d-block w-100" alt="Un recuerdo muy especial">
+            <div class="carousel-caption"><h5>Muchos momentos más 🫶</h5><p>Quiero seguir creando recuerdos contigo.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="WhatsApp Image 2026-10-13 at 10.13.02 PM.jpg" class="d-block w-100" alt="Nuestro futuro juntos">
+            <div class="carousel-caption"><h5>Tú y yo, mi amor ❤️</h5><p>Esto es solo el comienzo de nuestra historia.</p></div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselAmor" data-bs-slide="prev" aria-label="Foto anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselAmor" data-bs-slide="next" aria-label="Foto siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <p class="text-center texto-suave mt-4 fst-italic">
+        "No quiero solamente recuerdos bonitos contigo; quiero seguir construyéndolos." 💌
+      </p>
+    </div>
+  </section>
+
+
+  
+  <section class="seccion text-center"
+           style="background: #fff8fa;">
+
+    <div class="container">
+      <div class="display-3 mb-3">💗</div>
+
+      <h2 class="titulo-seccion display-5">
+        Si volviera a elegir...
+      </h2>
+
+      <p class="lead texto-suave mx-auto my-4"
+         style="max-width: 650px;">
+        Te elegiría a ti otra vez, para reír juntos,
+        superar los días difíciles, cumplir nuestros sueños
+        y seguir escribiendo nuestra historia.
+      </p>
+
+      <h3 class="display-6 fw-bold"
+          style="color: var(--rosa);">
+        Tú y yo, mi amor. ❤️
+      </h3>
+
+      <a href="#inicio" class="btn boton-rosa mt-4">
+        Volver al comienzo ↑
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-2">
+        Hecho con amor, especialmente para ti ❤️
+      </p>
+      <small>Una pequeña página para un amor enorme.</small>
+    </div>
+  </footer>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // REPRODUCTOR DE MÚSICA
+    const audio = document.getElementById("audioAmor");
+    const botonMusica = document.getElementById("botonMusica");
+    const botonPortada = document.getElementById("botonMusicaPortada");
+
+    function actualizarMusica() {
+      const reproduciendo = !audio.paused;
+
+      botonMusica.textContent = reproduciendo
+        ? "❚❚ Pausar canción"
+        : "▶ Reproducir canción";
+
+      botonPortada.textContent = reproduciendo
+        ? "❚❚ Pausar nuestra canción"
+        : "♫ Reproducir nuestra canción";
+    }
+
+    async function alternarMusica() {
+      if (audio.paused) {
+        try {
+          await audio.play();
+        } catch (error) {
+          alert(
+            "No se pudo reproducir la canción. " +
+            "Comprueba que musica.mp3 esté en la carpeta principal."
+          );
+        }
+      } else {
+        audio.pause();
+      }
+
+      actualizarMusica();
+    }
+
+    botonMusica.addEventListener("click", alternarMusica);
+    botonPortada.addEventListener("click", alternarMusica);
+
+    audio.addEventListener("play", actualizarMusica);
+    audio.addEventListener("pause", actualizarMusica);
+
+    
+    function crearCorazon() {
+      const corazon = document.createElement("span");
+
+      corazon.className = "corazon-flotante";
+      corazon.textContent = ["❤️", "💗", "💕", "💖"][
+        Math.floor(Math.random() * 4)
+      ];
+
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.fontSize =
+        (16 + Math.random() * 18) + "px";
+
+      corazon.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+      document.body.appendChild(corazon);
+
+      corazon.addEventListener("animationend", () => {
+        corazon.remove();
+      });
+    }
+
+    
+    const movimientoReducido = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    if (!movimientoReducido.matches) {
+      setInterval(crearCorazon, 1000);
+    }
+
+   
+    document.querySelectorAll("#menuAmor .nav-link")
+      .forEach((enlace) => {
+        enlace.addEventListener("click", () => {
+          const menu = document.getElementById("menuAmor");
+
+          if (menu.classList.contains("show")) {
+            bootstrap.Collapse.getOrCreateInstance(menu).hide();
+          }
+        });
+      });
+  </script>
+
+</body>
+</html>
